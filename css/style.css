@@ -25,6 +25,14 @@
 body {
     background-color: var(--bg);
     font-family: var(--copy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--font);
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -34,6 +42,60 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    font-family: var(--title);
+    color: var(--font);
+    font-weight: 500;
+}
+
+button.underline a {
+    color: var(--fourth);
+    border-bottom: solid 2px var(--fourth);
+    text-transform: uppercase;
+}
+
+button.underline {
+    margin-top: 15px;
+}
+
+/* --------------
+      Layout 
+----------------- */
+
+.container.accent {
+    background-color: var(--accent);
+    box-sizing: border-box;
+    width: 85%;
+    padding: 8%;
+    height: 275px;
+}
+
+.container.image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container.image.home {
+    width: 275px;
+    height: 275px;
+    float: right;
+    margin-top: -65px;
+}
+
+.container.image.home img {
+    width: 275px;
+    height: 275px;
+}
+
+.container.main {
+    min-height: 100vh;
+}
+
+.arrow {
+    clear:both;
+    text-align: center;
+    padding-top: 50px;
+}
 
 /* --------------
     Navigation 
@@ -60,9 +122,11 @@ nav ul {
 
 ul.nav {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     list-style-type: none;
     text-transform: uppercase;
+    width: 85%;
+    margin-top: 30px;
 }
 
 ul.nav li {
@@ -83,13 +147,13 @@ button.hamburger {
     padding: 0;
 }
 
-@media (max-width: 1001px) {
+/* @media (max-width: 1001px) {
     ul.nav {
         display: none;
         width: 100%;
 
     }
-}
+} */
 
 @media (min-width: 1000px) {
     .hamburger {
@@ -146,3 +210,47 @@ button.close svg {
     width: 30px;
 }
 
+ul#nav li a {
+    font-size: 1.77em;
+}
+
+ul#nav li {
+    margin: 15px;
+}
+
+.social.mobile {
+    justify-content: flex-start;
+}
+
+.social.mobile svg {
+    fill: var(--font);
+    width: 20px;
+}
+
+
+/* --------------
+      Footer 
+----------------- */
+
+footer {
+    background-color: var(--accent);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+ul.social {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    justify-content: center;
+}
+
+ul.social li {
+    margin: 0 7px;
+}
+
+ul.social svg {
+    fill: var(--third);
+    width: 23px;
+}
