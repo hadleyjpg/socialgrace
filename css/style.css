@@ -42,10 +42,14 @@ a {
     text-decoration: none;
 }
 
-h2 {
+h2, h3 {
     font-family: var(--title);
     color: var(--font);
     font-weight: 500;
+}
+
+.light {
+    color: var(--bg);
 }
 
 button.underline a {
@@ -58,9 +62,59 @@ button.underline {
     margin-top: 15px;
 }
 
+button.underline.dark a {
+    color: var(--second);
+    border-color: var(--second);
+}
+
+.service-grid button {
+    text-align: center;
+    border: solid 2px var(--second);
+    padding: 35px 0;
+    margin: 15px;
+}
+
+.service-grid button:hover {
+    background-color: var(--second);
+}
+
+.socialMedia svg {
+    width: 65px !important;
+}
+
+.service-grid button svg {
+    width: 75px;
+    margin-bottom: 10px;
+    fill: var(--second);
+}
+
+.service-grid button svg:hover {
+    fill: var(--font);
+}
+
+/* --------------
+    Background 
+----------------- */
+
+.container.satin {
+    background: url("../images/AdobeStock_243481813_Preview.jpg") no-repeat fixed center;
+    padding: 60px 0 0;
+    margin: 70px 0;
+}
+
+.container.inner.font {
+    background-color: var(--font);
+}
+
+
 /* --------------
       Layout 
 ----------------- */
+
+.container.inner {
+    width: 85%;
+    margin: 0 auto;
+}
 
 .container.accent {
     background-color: var(--accent);
@@ -88,13 +142,103 @@ button.underline {
 }
 
 .container.main {
-    min-height: 100vh;
+    min-height: calc(100vh - 112px);
 }
 
 .arrow {
     clear:both;
     text-align: center;
     padding-top: 50px;
+}
+
+@media (min-width: 950px) {
+    .arrow {
+        display: none;
+    }
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "socialMedia webDesign"
+      "branding photography";
+}
+
+.socialMedia { 
+    grid-area: socialMedia; 
+}
+  
+.webDesign { 
+    grid-area: webDesign;
+}
+
+.branding { 
+    grid-area: branding; 
+}
+
+.photography { 
+    grid-area: photography; 
+}
+
+.container.satin div {
+    margin-bottom: 60px;
+}
+
+.container.inner.font form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto 0;
+}
+
+.container.inner.font {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-2.iphone img {
+    margin: 0 auto;
+}
+
+@media (min-width: 1000px) {
+    .col-2 {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width: 950px) {
+    .container.accent {
+        width: 50%;
+        height: 80%;
+        margin-top: 40px;
+    }
+
+    .container.main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container.image.home {
+        margin-top: 0;
+    }
+
+    .container.inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container.inner > * {
+        width: 45%;
+        margin: 20px;
+    }
 }
 
 /* --------------
@@ -122,11 +266,15 @@ nav ul {
 
 ul.nav {
     display: flex;
-    /* flex-direction: row; */
     list-style-type: none;
     text-transform: uppercase;
-    width: 85%;
     margin-top: 30px;
+}
+
+@media (max-width: 950px) {
+    ul.nav {
+        width: 85%;
+    }
 }
 
 ul.nav li {
@@ -147,18 +295,8 @@ button.hamburger {
     padding: 0;
 }
 
-/* @media (max-width: 1001px) {
-    ul.nav {
-        display: none;
-        width: 100%;
-
-    }
-} */
-
-@media (min-width: 1000px) {
-    .hamburger {
-        display: none;
-    }
+.nav-desktop .nav {
+    display: none;
 }
 
 nav a {
@@ -210,11 +348,11 @@ button.close svg {
     width: 30px;
 }
 
-ul#nav li a {
+ul.nav li a {
     font-size: 1.77em;
 }
 
-ul#nav li {
+ul.nav li {
     margin: 15px;
 }
 
@@ -225,6 +363,35 @@ ul#nav li {
 .social.mobile svg {
     fill: var(--font);
     width: 20px;
+}
+
+@media (min-width: 1000px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-desktop ul.nav {
+        display: flex;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    ul.nav li a {
+        font-size: 1.5em;
+    }
+    
+    ul.nav li {
+        margin: 15px;
+    }
+}
+
+
+/* --------------
+       Form 
+----------------- */
+
+input {
+    margin-bottom: 10px;
 }
 
 
