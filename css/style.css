@@ -42,6 +42,12 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-family: var(--title);
+    color: var(--font);
+    font-weight: 600;
+}
+
 h2, h3 {
     font-family: var(--title);
     color: var(--font);
@@ -72,10 +78,18 @@ button.underline.dark a {
     border: solid 2px var(--second);
     padding: 35px 0;
     margin: 15px;
+    cursor: pointer;
 }
 
 .service-grid button:hover {
     background-color: var(--second);
+    transition-property: 'background-color';
+    transition-timing-function: 'ease';
+    transition-duration: '700ms';
+}
+
+.service-grid button:hover svg {
+    fill: var(--font) !important;
 }
 
 .socialMedia svg {
@@ -90,6 +104,14 @@ button.underline.dark a {
 
 .service-grid button svg:hover {
     fill: var(--font);
+}
+
+.header__title {
+    text-transform: uppercase;
+    color: var(--bg);
+    padding: 1em;
+    background-image: url('../images/greencrepe.jpg');
+    background-size: 200%;
 }
 
 /* --------------
@@ -208,6 +230,12 @@ button.underline.dark a {
     margin: 0 auto;
 }
 
+.header__title {
+    margin-left: -87px;
+    margin-top: 50px;
+}
+
+
 @media (min-width: 1000px) {
     .col-2 {
         flex-direction: row-reverse;
@@ -238,6 +266,29 @@ button.underline.dark a {
     .container.inner > * {
         width: 45%;
         margin: 20px;
+    }
+
+    .header {
+        display: flex;
+    }
+
+    .header__img img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .header__img {
+        display: flex;
+        align-items: flex-start;
+        width: 55%;
+    }
+
+    .header__text {
+        padding: 0 5em 0 7em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
     }
 }
 
@@ -387,12 +438,65 @@ ul.nav li {
 
 
 /* --------------
+      Toggles 
+----------------- */
+
+.webDesign__text, .branding__text, .photography__text {
+    display: none;
+}
+
+
+/* --------------
        Form 
 ----------------- */
 
 input {
     margin-bottom: 10px;
 }
+
+
+/* --------------
+     Carousel 
+----------------- */
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel__container {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.carousel__slide {
+    display: flex;
+    object-fit: cover;
+}
+
+.carousel__slide img {
+    width: 100%;
+    padding-right: 40px;
+}
+
+#prevBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 7%;
+    cursor: pointer;
+}
+
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 7%;
+    cursor: pointer;
+}
+
+
 
 
 /* --------------
