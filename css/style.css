@@ -35,6 +35,10 @@ main {
     flex: 1;
 }
 
+p {
+    line-height: 1.25em;
+}
+
 a {
     font-family: var(--title);
     font-size: 1em;
@@ -45,13 +49,18 @@ a {
 h1 {
     font-family: var(--title);
     color: var(--font);
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 3em;
 }
 
 h2, h3 {
     font-family: var(--title);
     color: var(--font);
     font-weight: 500;
+}
+
+h2 {
+    font-size: 2em;
 }
 
 .light {
@@ -109,9 +118,10 @@ button.underline.dark a {
 .header__title {
     text-transform: uppercase;
     color: var(--bg);
-    padding: 1em;
+    padding: 5%;
     background-image: url('../images/greencrepe.jpg');
     background-size: 200%;
+    font-size: 2.3em;
 }
 
 /* --------------
@@ -119,14 +129,15 @@ button.underline.dark a {
 ----------------- */
 
 .container.satin {
-    background: url("../images/AdobeStock_243481813_Preview.jpg") no-repeat fixed center;
+    background-image: url("../images/greensilk-bg.jpg");
+    background-size: cover;
     padding: 60px 0 0;
-    margin: 70px 0;
 }
 
-.container.inner.font {
+.newsletter {
     background-color: var(--font);
 }
+
 
 
 /* --------------
@@ -159,8 +170,8 @@ button.underline.dark a {
 }
 
 .container.image.home img {
-    width: 275px;
-    height: 275px;
+    width: 100%;
+    height: 100%;
 }
 
 .container.main {
@@ -176,6 +187,11 @@ button.underline.dark a {
 @media (min-width: 950px) {
     .arrow {
         display: none;
+    }
+
+    .container.image.home {
+        width: 45%;
+        height: 70vh;
     }
 }
 
@@ -209,16 +225,24 @@ button.underline.dark a {
     margin-bottom: 60px;
 }
 
-.container.inner.font form {
+.newsletter form {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: 20px auto 0;
 }
 
-.container.inner.font {
+.newsletter form input {
+    margin-bottom: 30px;
+}
+
+.newsletter {
     text-align: center;
     padding: 20px 0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .col-2 {
@@ -235,6 +259,51 @@ button.underline.dark a {
     margin-top: 50px;
 }
 
+.work__single {
+    width: 29%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.work__single.thingstodolexky {
+    background: url('../images/projects/thingstodolex/thingstodolex-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__single.sirehotel {
+    background: url('../images/projects/sirehotel/sirehotel-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__single.ninelives {
+    background: url('../images/projects/ninelives/ninelives-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__title {
+    background-color: var(--bg);
+    padding: 1.15em;
+    width: 40%;
+    font-size: 1.25em;
+}
+
+.title--rotate {
+    color: var(--bg);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+}
+
+.iphone img {
+    width: 80%;
+}
+
 
 @media (min-width: 1000px) {
     .col-2 {
@@ -243,10 +312,18 @@ button.underline.dark a {
 }
 
 @media (min-width: 950px) {
+
+    .container.full {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .container.accent {
-        width: 50%;
-        height: 80%;
-        margin-top: 40px;
+        width: 52%;
+        height: 70vh;
+        margin-top: 80px;
     }
 
     .container.main {
@@ -266,6 +343,11 @@ button.underline.dark a {
     .container.inner > * {
         width: 45%;
         margin: 20px;
+    }
+
+    .container.satin .container.inner > * {
+        width: 100%;
+        margin: 0px;
     }
 
     .header {
@@ -289,6 +371,37 @@ button.underline.dark a {
         flex-direction: column;
         justify-content: center;
         width: 45%;
+    }
+
+    .work {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0px auto;
+        align-items: flex-start;
+        padding: 30px 0;
+    }
+
+    .iphone img {
+        width: 38%;
+    }
+
+    .col-2.iphone div {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .toggle {
+        margin-top: 10vh !important;
+        margin-bottom: 15vh !important;
+    }
+
+    .right {
+        display: flex;
+        justify-content: flex-end;
     }
 }
 
@@ -445,6 +558,15 @@ ul.nav li {
     display: none;
 }
 
+.socialMedia__text, .webDesign__text, .branding__text, .photography__text {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socialMedia__text {
+    display: flex;
+}
+
 
 /* --------------
        Form 
@@ -453,6 +575,163 @@ ul.nav li {
 input {
     margin-bottom: 10px;
 }
+
+#mc_embed_signup {
+    width: 40%;
+    margin: 0 auto;
+    background: transparent;
+    clear:left;
+    font: 1em 'Cora',sans-serif;
+    color: var(--third);
+    margin-top: 25px;
+}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        
+#mc_embed_signup .button { 
+    background: transparent; 
+    border-radius: 0; 
+    color: var(--fourth); 
+    border-bottom: 3px solid; 
+    font-family: 'Cora'; 
+    text-transform: uppercase; 
+    padding: 0 5px;
+    margin: 20px;
+    font-size: 1.2em;
+}
+
+#mc_embed_signup .button:hover {
+    background: transparent; 
+    color: var(--font); 
+    border-color: 
+    var(--font);
+}
+
+input, textarea { 
+    margin-bottom: 10px; 
+    background: transparent; 
+    border: 0 none; 
+    border-bottom: 3px solid var(--third); 
+    border-radius: 0;
+    font-family: var(--title);  
+    font-size: 15px; 
+    color: var(--font);
+}
+
+input::placeholder, textarea::placeholder { 
+    color: var(--third);
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--font);
+}
+
+input#mce-FNAME, input#mce-EMAIL, textarea {
+    width: 100%;
+    margin: 20px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+form { 
+    padding: 0;
+}
+
+div#mc_embed_signup_scroll {
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-field-group {
+    display: flex;
+}
+
+.mc-field-group.input-group {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mc-field-group.input-group ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+[type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+  }
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 2.3em;
+    font-size: 1.05em;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    border: 3px solid var(--third);
+    background: transparent;
+    border-radius: 0;
+    -webkit-transition: all .275s;
+    transition: all .275s;
+  }
+
+  /* checked mark aspect */
+  [type="checkbox"]:not(:checked) + label:after,
+  [type="checkbox"]:checked + label:after {
+    content: '✕';
+    position: absolute;
+    top: .7em;
+    left: .3em;
+    font-size: 1em;
+    color: var(--font);
+    line-height: 0;
+    -webkit-transition: all .2s;
+        transition: all .2s;
+  }
+
+  /* checked mark aspect changes */
+  [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(45deg);
+        transform: scale(0) rotate(45deg);
+  }
+
+  [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0);
+  }
+
+
+
+
+
+
+
+
 
 
 /* --------------
@@ -482,20 +761,100 @@ input {
 
 #prevBtn {
     position: absolute;
-    top: 50%;
+    top: 48%;
     z-index: 10;
     left: 7%;
     cursor: pointer;
+    transform: rotate(90deg);
 }
 
 #nextBtn {
     position: absolute;
-    top: 50%;
+    top: 48%;
     z-index: 10;
     right: 7%;
     cursor: pointer;
+    transform: rotate(-90deg);
 }
 
+
+/* --------------
+      Project 
+----------------- */
+
+.project {
+    width: 65%;
+    margin: 30px auto 200px;
+    background-image: url('../images/projects/thingstodolex/thingstodolex-header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project__intro {
+    width: 65%;
+    margin: 0 auto -150px;
+    background-color: var(--bg);
+    padding: 3.5em;
+}
+
+.project__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project--handle {
+    color: var(--fourth);
+    border-bottom: 2px solid var(--fourth);
+    padding-bottom: .15em;
+}
+
+.project__title h1 {
+    font-size: 3em;
+    margin-block-start: 0;
+    margin-block-end: .35em;
+}
+
+.project__title div .social {
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.project__title div .social svg {
+    fill: var(--font);
+}
+
+
+
+/* --------------
+    Blockquote 
+----------------- */
+
+blockquote {
+    width: 65%;
+    margin: 120px auto;
+    border: 4px solid var(--second);
+    padding: 3.5em;
+    text-align: center;
+}
+
+blockquote p {
+    font-size: 1.25em;
+}
+
+blockquote::before {
+    display: flex;
+    content: "";
+    background: url('../images/icons/quote.svg') no-repeat;
+    background-size: 45px;
+    height: 45px;
+    width: 45px;
+    margin: 0 auto;
+}
 
 
 

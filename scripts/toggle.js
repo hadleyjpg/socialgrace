@@ -21,7 +21,7 @@ const photographyIcon = document.querySelector('button.photography svg');
 
 
 webDesign.addEventListener('click', () => {
-    webDesign__text.style.display = 'block';
+    webDesign__text.style.display = 'flex';
     webDesign.style.background = 'var(--second)';
     webDesignIcon.style.fill = 'var(--font)';
     socialMedia__text.style.display = 'none';
@@ -30,7 +30,7 @@ webDesign.addEventListener('click', () => {
 });
 
 socialMedia.addEventListener('click', () => {
-    socialMedia__text.style.display = 'block';
+    socialMedia__text.style.display = 'flex';
     socialMedia.style.background = 'var(--second)';
     socialMediaIcon.style.fill = 'var(--font)';
     webDesign__text.style.display = 'none';
@@ -39,7 +39,7 @@ socialMedia.addEventListener('click', () => {
 });
 
 branding.addEventListener('click', () => {
-    branding__text.style.display = 'block';
+    branding__text.style.display = 'flex';
     branding.style.background = 'var(--second)';
     brandingIcon.style.fill = 'var(--font)';
     webDesign__text.style.display = 'none';
@@ -48,7 +48,7 @@ branding.addEventListener('click', () => {
 });
 
 photography.addEventListener('click', () => {
-    photography__text.style.display = 'block';
+    photography__text.style.display = 'flex';
     socialMedia__text.style.display = 'none';
     webDesign__text.style.display = 'none';
     branding__text.style.display = 'none';
