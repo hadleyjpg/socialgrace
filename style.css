@@ -129,9 +129,10 @@ button.underline.dark a {
     text-transform: uppercase;
     color: var(--bg);
     padding: 5%;
-    background-image: url('../images/greencrepe.jpg');
+    background-image: url('http://localhost:8888/socialgrace/wp-content/uploads/2021/04/greencrepe.jpg');
     background-size: 200%;
     font-size: 2.3em;
+    z-index: 1;
 }
 
 /* --------------
@@ -139,7 +140,7 @@ button.underline.dark a {
 ----------------- */
 
 .container.satin {
-    background-image: url("../images/greensilk-bg.jpg");
+    background-image: url("http://localhost:8888/socialgrace/wp-content/uploads/2021/04/greencrepe.jpg");
     background-size: cover;
     padding: 60px 0 0;
 }
@@ -595,7 +596,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding: 1.5em 0;
     flex-wrap: wrap;

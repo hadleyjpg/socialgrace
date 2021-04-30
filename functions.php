@@ -40,60 +40,28 @@ function socialgrace_register_scripts() {
 add_action('wp_enqueue_scripts', 'socialgrace_register_scripts');
 
 
-// Portfolio custom post type function
+// Portfolio & Services custom post types function
 function socialgrace_create_posttype() {
  
     register_post_type( 'portfolio',
     // CPT Options
         array(
             'labels' => array(
-                'name' => __( 'Portfolio' ),
-                'singular_name' => __( 'Project' )
+                'name'                => _x( 'Portfolio', 'Post Type General Name', 'socialgrace' ),
+                'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'socialgrace' ),
+                'menu_name'           => __( 'Portfolio', 'socialgrace' ),
+                'parent_item_colon'   => __( 'Parent Project', 'socialgrace' ),
+                'all_items'           => __( 'All Projects', 'socialgrace' ),
+                'view_item'           => __( 'View Project', 'socialgrace' ),
+                'add_new_item'        => __( 'Add New Project', 'socialgrace' ),
+                'add_new'             => __( 'Add New', 'socialgrace' ),
+                'edit_item'           => __( 'Edit Project', 'socialgrace' ),
+                'update_item'         => __( 'Update Project', 'socialgrace' ),
+                'search_items'        => __( 'Search Project', 'socialgrace' ),
+                'not_found'           => __( 'Not Found', 'socialgrace' ),
+                'not_found_in_trash'  => __( 'Not found in Trash', 'socialgrace' ),
             ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'work'),
-            'show_in_rest' => true,
- 
-        )
-    );
-}
-
-add_action( 'init', 'socialgrace_create_posttype' );
-
-function socialgrace_custom_post_type() {
- 
-    // Set UI labels for Custom Post Type
-        $labels = array(
-            'name'                => _x( 'Portfolio', 'Post Type General Name', 'socialgrace' ),
-            'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'socialgrace' ),
-            'menu_name'           => __( 'Portfolio', 'socialgrace' ),
-            'parent_item_colon'   => __( 'Parent Project', 'socialgrace' ),
-            'all_items'           => __( 'All Projects', 'socialgrace' ),
-            'view_item'           => __( 'View Project', 'socialgrace' ),
-            'add_new_item'        => __( 'Add New Project', 'socialgrace' ),
-            'add_new'             => __( 'Add New', 'socialgrace' ),
-            'edit_item'           => __( 'Edit Project', 'socialgrace' ),
-            'update_item'         => __( 'Update Project', 'socialgrace' ),
-            'search_items'        => __( 'Search Project', 'socialgrace' ),
-            'not_found'           => __( 'Not Found', 'socialgrace' ),
-            'not_found_in_trash'  => __( 'Not found in Trash', 'socialgrace' ),
-        );
-         
-    // Set other options for Custom Post Type
-         
-        $args = array(
-            'label'               => __( 'portfolio', 'socialgrace' ),
-            'description'         => __( 'Client work created by Social Grace', 'socialgrace' ),
-            'labels'              => $labels,
-            // Features this CPT supports in Post Editor
             'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', 'author', ),
-            // You can associate this CPT with a taxonomy or custom taxonomy. 
-            'taxonomies'          => array( 'category' ),
-            /* A hierarchical CPT is like Pages and can have
-            * Parent and child items. A non-hierarchical CPT
-            * is like Posts.
-            */ 
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,
@@ -106,25 +74,90 @@ function socialgrace_custom_post_type() {
             'has_archive'         => true,
             'exclude_from_search' => false,
             'publicly_queryable'  => true,
-            'capability_type'     => 'custom',
+            'rewrite' => array('slug' => 'work'),
+            'capability_type'     => 'post',
             'show_in_rest' => true,
-     
-        );
-         
-        // Registering your Custom Post Type
-        register_post_type( 'portfolio', $args );
-     
-    }
-     
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not 
-* unnecessarily executed. 
-*/
-    
-add_action( 'init', 'socialgrace_custom_post_type', 0 );
+            
+ 
+        )
+    );
+
+    register_post_type( 'services',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name'                => _x( 'Services', 'Post Type General Name', 'socialgrace' ),
+                'singular_name'       => _x( 'Service', 'Post Type Singular Name', 'socialgrace' ),
+                'menu_name'           => __( 'Services', 'socialgrace' ),
+                'parent_item_colon'   => __( 'Parent Service', 'socialgrace' ),
+                'all_items'           => __( 'All Services', 'socialgrace' ),
+                'view_item'           => __( 'View Service', 'socialgrace' ),
+                'add_new_item'        => __( 'Add New Service', 'socialgrace' ),
+                'add_new'             => __( 'Add New', 'socialgrace' ),
+                'edit_item'           => __( 'Edit Service', 'socialgrace' ),
+                'update_item'         => __( 'Update Service', 'socialgrace' ),
+                'search_items'        => __( 'Search Service', 'socialgrace' ),
+                'not_found'           => __( 'Not Found', 'socialgrace' ),
+                'not_found_in_trash'  => __( 'Not found in Trash', 'socialgrace' ),
+            ),
+            'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', 'author', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 5,
+            'menu_icon'           => 'dashicons-welcome-widgets-menus',
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'rewrite' => array('slug' => 'services'),
+            'capability_type'     => 'post',
+            'show_in_rest' => true,
+ 
+        )
+    );
+}
+
+add_action( 'init', 'socialgrace_create_posttype' );
 
 
 
+// Portfolio Categories 
+function create_portfolio_hierarchical_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Parent Category' ),
+    'parent_item_colon' => __( 'Parent Category:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category Name' ),
+    'menu_name' => __( 'Categories' ),
+  );    
+ 
+  register_taxonomy('Categories',array('portfolio'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'work' ),
+  ));
+ 
+}
+
+add_action( 'init', 'create_portfolio_hierarchical_taxonomy', 0 );
+
+
+// Portolfio Meta Box
 add_filter( 'rwmb_meta_boxes', 'socialgrace_register_meta_boxes' );
 
 function socialgrace_register_meta_boxes( $meta_boxes ) {
@@ -195,5 +228,33 @@ function socialgrace_register_meta_boxes( $meta_boxes ) {
     return $meta_boxes;
 }    
 
+
+// Pages Meta Box
+add_filter( 'rwmb_meta_boxes', 'your_prefix_register_meta_boxes' );
+
+function your_prefix_register_meta_boxes( $meta_boxes ) {
+    $prefix = 'socialgrace_';
+
+    $meta_boxes[] = [
+        'title'      => esc_html__( 'Social Grace Theme Options', 'online-generator' ),
+        'id'         => 'socialgrace_pages',
+        'post_types' => ['page'],
+        'context'    => 'normal',
+        'fields'     => [
+            [
+                'type' => 'text',
+                'name' => esc_html__( 'Heading', 'online-generator' ),
+                'id'   => $prefix . 'heading',
+            ],
+            [
+                'type' => 'textarea',
+                'name' => esc_html__( 'Description', 'online-generator' ),
+                'id'   => $prefix . 'description',
+            ],
+        ],
+    ];
+
+    return $meta_boxes;
+}
 
 ?>

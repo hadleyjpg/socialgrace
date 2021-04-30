@@ -43,7 +43,7 @@
     </div>
     <div class="nav-mobile" id="navMobile">
         <div class="mobile">
-            <a href="index.html"><img src="images/sg-logo.png" height="60px"></a>
+            <a href="index.html"><img src="<?php echo $logo[0] ?>" height="60px"></a>
             <button class="close" id="close">
                 <?xml version="1.0" encoding="iso-8859-1"?>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
