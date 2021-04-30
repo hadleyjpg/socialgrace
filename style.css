@@ -1,0 +1,1123 @@
+/* 
+Theme Name: Social Grace
+Text Domain: Social Grace
+Version: 1.0
+Description: Custom Wordpress theme created for Social Grace Agency. Plugins used: Custom Adobe Fonts, Elementor, Elementor - Header, Footer & Blocks, MC4WP, Meta Box & Smash Balloon Instagram Feed. 
+Author: Hadley Slucher
+Author URI: https://hadley.work
+*/
+
+
+@font-face {
+    font-family: 'Moon Time Script';
+    src:  url('../fonts/MoonTime-Regular.ttf') format('truetype');
+  }
+
+:root {
+    --accent: #EBDED4;
+    --second: #F2D2BD;
+    --third: #DBC7BC;
+    --fourth: #CBD0B5;
+    --bg: #F7F2EB;
+    --font: #C0987E;
+    --sub: 'Moon Time Script';
+    --title: 'cora', sans-serif;
+    --copy: 'muli', sans-serif;
+	--default-shadow: rgba(0, 0, 0, 0.25);
+	--default-duration: 0.3s;
+}
+
+
+/* --------------
+     General 
+----------------- */
+
+body {
+    background-color: var(--bg);
+    font-family: var(--copy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--font);
+}
+
+main {
+    flex: 1;
+}
+
+p {
+    line-height: 1.25em;
+}
+
+a {
+    font-family: var(--title);
+    font-size: 1em;
+    color: var(--font);
+    text-decoration: none;
+}
+
+h1 {
+    font-family: var(--title);
+    color: var(--font);
+    font-weight: 500;
+    font-size: 3em;
+}
+
+h2, h3 {
+    font-family: var(--title);
+    color: var(--font);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.light {
+    color: var(--bg);
+}
+
+button.underline a {
+    color: var(--fourth);
+    border-bottom: solid 2px var(--fourth);
+    text-transform: uppercase;
+}
+
+button.underline {
+    margin-top: 15px;
+}
+
+button.underline.dark a {
+    color: var(--second);
+    border-color: var(--second);
+}
+
+.service-grid button {
+    text-align: center;
+    border: solid 2px var(--second);
+    padding: 35px 0;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.service-grid button:hover {
+    background-color: var(--second);
+    transition-property: 'background-color';
+    transition-timing-function: 'ease';
+    transition-duration: '700ms';
+}
+
+.service-grid button:hover svg {
+    fill: var(--font) !important;
+}
+
+.socialMedia svg {
+    width: 65px !important;
+}
+
+.service-grid button svg {
+    width: 75px;
+    margin-bottom: 10px;
+    fill: var(--second);
+}
+
+.service-grid button svg:hover {
+    fill: var(--font);
+}
+
+.header__title {
+    text-transform: uppercase;
+    color: var(--bg);
+    padding: 5%;
+    background-image: url('../images/greencrepe.jpg');
+    background-size: 200%;
+    font-size: 2.3em;
+}
+
+/* --------------
+    Background 
+----------------- */
+
+.container.satin {
+    background-image: url("../images/greensilk-bg.jpg");
+    background-size: cover;
+    padding: 60px 0 0;
+}
+
+.newsletter {
+    background-color: var(--font);
+}
+
+
+
+/* --------------
+      Layout 
+----------------- */
+
+.container.inner {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.container.accent {
+    background-color: var(--accent);
+    box-sizing: border-box;
+    width: 85%;
+    padding: 8%;
+    height: 275px;
+}
+
+.container.image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container.image.home {
+    width: 275px;
+    height: 275px;
+    float: right;
+    margin-top: -65px;
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.container.image.home img {
+    width: 100%;
+    height: 100%;
+}
+
+.container.main {
+    min-height: calc(100vh - 112px);
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.arrow {
+    clear:both;
+    text-align: center;
+    padding-top: 50px;
+}
+
+@media (min-width: 950px) {
+    .arrow {
+        display: none;
+    }
+
+    .container.image.home {
+        width: 45%;
+        height: 70vh;
+    }
+
+    .footer {
+        display: flex !important;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "socialMedia webDesign"
+      "branding photography";
+}
+
+.socialMedia { 
+    grid-area: socialMedia; 
+}
+  
+.webDesign { 
+    grid-area: webDesign;
+}
+
+.branding { 
+    grid-area: branding; 
+}
+
+.photography { 
+    grid-area: photography; 
+}
+
+.container.satin div {
+    margin-bottom: 60px;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto 0;
+}
+
+.newsletter form input {
+    margin-bottom: 30px;
+}
+
+.newsletter {
+    text-align: center;
+    padding: 20px 0;
+    min-height: 200px;
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-2.iphone img {
+    margin: 0 auto;
+}
+
+.header__title {
+    margin-left: -87px;
+    margin-top: 50px;
+}
+
+.work__single {
+    width: 29%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.work__single.thingstodolexky {
+    background: url('../images/projects/thingstodolex/thingstodolex-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__single.sirehotel {
+    background: url('../images/projects/sirehotel/sirehotel-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__single.ninelives {
+    background: url('../images/projects/ninelives/ninelives-header.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.work__title {
+    background-color: var(--bg);
+    padding: 1.15em;
+    width: 40%;
+    font-size: 1.25em;
+}
+
+.title--rotate {
+    color: var(--bg);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+}
+
+.iphone img {
+    width: 80%;
+}
+
+.prices {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prices__tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.prices__single {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+    padding: 40px;
+}
+
+.prices__title h3, .prices__single h4 {
+    text-align: center;
+}
+
+.prices__title h3 {
+    font-size: 2em;
+}
+
+.prices--solid .prices__title h3 {
+    color: var(--bg);
+}
+
+.prices__title {
+    padding-bottom: 30px;
+    border-bottom: 3px solid;
+    margin-bottom: 30px;
+}
+
+.prices__single ul li {
+    margin-bottom: 10px;
+}
+
+.prices--outline {
+    border: 3px solid var(--second);
+    margin-right: 40px;
+}
+
+.prices--solid {
+    border: 3px solid var(--fourth);
+    background-color: var(--fourth);
+    color: var(--bg);
+}
+
+@media (min-width: 1000px) {
+    .col-2 {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width: 950px) {
+
+    .container.full {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container.accent {
+        width: 52%;
+        height: 70vh;
+        margin-top: 80px;
+    }
+
+    .container.main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container.image.home {
+        margin-top: 0;
+    }
+
+    .container.inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container.satin .container.inner > * {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .header {
+        display: flex;
+    }
+
+    .header__img img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .header__img {
+        display: flex;
+        align-items: flex-start;
+        width: 55%;
+    }
+
+    .header__text {
+        padding: 0 5em 0 7em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+    }
+
+    .work {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0px auto;
+        align-items: flex-start;
+        padding: 30px 0;
+    }
+
+    .space {
+        height: 100px;
+    }
+
+    .iphone img {
+        width: 38%;
+    }
+
+    .col-2.iphone div {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .toggle {
+        margin-top: 10vh !important;
+        margin-bottom: 15vh !important;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .toggle > * {
+        width: 45%;
+    }
+
+    .right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .prices__text {
+        width: 38%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .two {
+        display: flex;
+    }
+
+    .two > * {
+        width: 50%;
+    }
+
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 70px;
+    }
+
+    .services > * {
+        width: 30%;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+}
+
+/* --------------
+    Navigation 
+----------------- */
+
+nav ul {
+    list-style-type: none;
+    color: var(--accent);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5em 0;
+    z-index: 99;
+}
+
+.nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+    flex-wrap: wrap;
+}
+
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+@media (max-width: 950px) {
+    ul.nav {
+        width: 85%;
+    }
+}
+
+ul.nav li {
+    margin: .5em 0em;
+    font-family: var(--title);
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1em auto 0;
+}
+
+button.hamburger {
+    padding: 0;
+}
+
+.nav-desktop .nav {
+    display: none;
+}
+
+nav a {
+    text-transform: uppercase;
+}
+
+.active {
+    color: var(--third) !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.nav-mobile {
+    background-color: var(--accent);
+    min-height: 94%;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+}
+
+/* How container should look when open
+
+.nav-mobile {
+    background-color: var(--accent);
+    min-height: 93vh;
+    width: 50vh;
+    position: absolute;
+    top: 0;
+} */
+
+.mobile {
+    padding-top: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+svg {
+    fill: var(--font);
+    width: 40px;
+}
+
+button.close svg {
+    width: 30px;
+}
+
+ul.nav li a {
+    font-size: 1.77em;
+}
+
+ul.nav li {
+    margin: 15px;
+}
+
+.social.mobile {
+    justify-content: flex-start;
+}
+
+.social.mobile svg {
+    fill: var(--font);
+    width: 20px;
+}
+
+@media (min-width: 1000px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-desktop ul.nav {
+        display: flex;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    ul.nav li a {
+        font-size: 1.5em;
+    }
+    
+    ul.nav li {
+        margin: 15px;
+    }
+}
+
+
+/* --------------
+      Toggles 
+----------------- */
+
+.webDesign__text, .branding__text, .photography__text {
+    display: none;
+}
+
+.socialMedia__text, .webDesign__text, .branding__text, .photography__text {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socialMedia__text {
+    display: flex;
+}
+
+.webDesign__text.toggle__on {
+    display: flex;
+}
+
+.toggle__off {
+    display: none;
+}
+
+
+
+/* --------------
+       Icons 
+----------------- */
+
+.serviceicons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.serviceicons svg {
+    width: 75px;
+    margin-bottom: 10px;
+}
+
+svg#Group_19 {
+    width: 65px !important;
+}
+
+.serviceicons div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+/* --------------
+       Form 
+----------------- */
+
+input {
+    margin-bottom: 10px;
+}
+
+#mc_embed_signup {
+    width: 40%;
+    margin: 0 auto;
+    background: transparent;
+    clear:left;
+    font: 1em 'Cora',sans-serif;
+    color: var(--third);
+    margin-top: 25px;
+}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        
+#mc_embed_signup .button { 
+    background: transparent; 
+    border-radius: 0; 
+    color: var(--fourth); 
+    border-bottom: 3px solid; 
+    font-family: 'Cora'; 
+    text-transform: uppercase; 
+    padding: 0 5px;
+    margin: 20px;
+    font-size: 1.2em;
+}
+
+#mc_embed_signup .button:hover {
+    background: transparent; 
+    color: var(--font); 
+    border-color: 
+    var(--font);
+}
+
+input, textarea { 
+    margin-bottom: 10px; 
+    background: transparent; 
+    border: 0 none; 
+    border-bottom: 3px solid var(--third); 
+    border-radius: 0;
+    font-family: var(--title);  
+    font-size: 15px; 
+    color: var(--font);
+}
+
+input::placeholder, textarea::placeholder { 
+    color: var(--third);
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--font);
+}
+
+input#mce-FNAME, input#mce-EMAIL, textarea {
+    width: 100%;
+    margin: 20px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+form { 
+    padding: 0;
+}
+
+div#mc_embed_signup_scroll {
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-field-group {
+    display: flex;
+}
+
+.mc-field-group.input-group {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mc-field-group.input-group ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+[type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+  }
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 2.3em;
+    font-size: 1.05em;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    border: 3px solid var(--third);
+    background: transparent;
+    border-radius: 0;
+    -webkit-transition: all .275s;
+    transition: all .275s;
+  }
+
+  /* checked mark aspect */
+  [type="checkbox"]:not(:checked) + label:after,
+  [type="checkbox"]:checked + label:after {
+    content: '✕';
+    position: absolute;
+    top: .7em;
+    left: .3em;
+    font-size: 1em;
+    color: var(--font);
+    line-height: 0;
+    -webkit-transition: all .2s;
+        transition: all .2s;
+  }
+
+  /* checked mark aspect changes */
+  [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(45deg);
+        transform: scale(0) rotate(45deg);
+  }
+
+  [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0);
+  }
+
+
+
+
+
+
+
+
+
+
+/* --------------
+     Carousel 
+----------------- */
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel__container {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.carousel__slide {
+    display: flex;
+    object-fit: cover;
+}
+
+.carousel__slide img {
+    width: 100%;
+    padding-right: 40px;
+}
+
+#prevBtn {
+    position: absolute;
+    top: 48%;
+    z-index: 10;
+    left: 7%;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+#nextBtn {
+    position: absolute;
+    top: 48%;
+    z-index: 10;
+    right: 7%;
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+
+/* --------------
+      Project 
+----------------- */
+
+.project {
+    width: 65%;
+    margin: 30px auto 200px;
+    background-image: url('../images/projects/thingstodolex/thingstodolex-header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project__intro {
+    width: 65%;
+    margin: 0 auto -150px;
+    background-color: var(--bg);
+    padding: 3.5em;
+}
+
+.project__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project--handle {
+    color: var(--fourth);
+    border-bottom: 2px solid var(--fourth);
+    padding-bottom: .15em;
+}
+
+.project__title h1 {
+    font-size: 3em;
+    margin-block-start: 0;
+    margin-block-end: .35em;
+}
+
+.project__title div .social {
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.project__title div .social svg {
+    fill: var(--font);
+}
+
+
+
+/* --------------
+    Blockquote 
+----------------- */
+
+blockquote {
+    width: 65%;
+    margin: 120px auto;
+    border: 4px solid var(--second);
+    padding: 3.5em;
+    text-align: center;
+}
+
+blockquote p {
+    font-size: 1.25em;
+}
+
+blockquote::before {
+    display: flex;
+    content: "";
+    background: url('../images/icons/quote.svg') no-repeat;
+    background-size: 45px;
+    height: 45px;
+    width: 45px;
+    margin: 0 auto;
+}
+
+
+
+/* --------------
+      Counter 
+----------------- */
+
+.counter {
+    display: flex;
+    justify-content: space-around;
+    border: 4px solid var(--second);
+    width: 60%;
+    padding: 70px 0px;
+    margin: 0px auto 150px;
+    text-align: center;
+}
+
+.counter span {
+    font-size: 3em;
+    font-family: var(--title);
+}
+
+.counter h4 {
+    font-size: 1.25em;
+    font-family: var(--title);
+}
+
+
+
+
+/* --------------
+      Footer 
+----------------- */
+
+footer {
+    background-color: var(--accent);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+ul.social {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    justify-content: center;
+}
+
+ul.social li {
+    margin: 0 7px;
+}
+
+ul.social svg {
+    fill: var(--third);
+    width: 23px;
+}
