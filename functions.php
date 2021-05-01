@@ -1,5 +1,19 @@
 <?php 
 
+
+
+// Display which template is being used in footer
+
+function meks_which_template_is_loaded() {
+	if ( is_super_admin() ) {
+		global $template;
+		print_r( $template );
+	}
+}
+ 
+add_action( 'wp_footer', 'meks_which_template_is_loaded' );
+
+
 function socialgrace_theme_support() {
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
@@ -35,6 +49,7 @@ add_action('wp_enqueue_scripts', 'socialgrace_register_styles');
 
 function socialgrace_register_scripts() {
     wp_enqueue_script('socialgrace-index', get_template_directory_uri() . '/assets/javascript/index.js', array(), 1.0, 'all');
+    wp_enqueue_script('socialgrace-carousel', get_template_directory_uri() . '/assets/javascript/carousel.js', array(), 1.0, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'socialgrace_register_scripts');
@@ -149,7 +164,7 @@ function create_portfolio_hierarchical_taxonomy() {
     'show_in_rest' => true,
     'show_admin_column' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'work' ),
+    'rewrite' => array( 'slug' => 'portfolio-category' ),
   ));
  
 }
@@ -175,8 +190,8 @@ function socialgrace_register_meta_boxes( $meta_boxes ) {
             ],
             [
                 'type' => 'text',
-                'name' => esc_html__( 'Client', 'online-generator' ),
-                'id'   => $prefix . 'client',
+                'name' => esc_html__( 'Project Title', 'online-generator' ),
+                'id'   => $prefix . 'title',
             ],
             [
                 'type' => 'textarea',

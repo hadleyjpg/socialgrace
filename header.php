@@ -9,10 +9,10 @@
         <?php 
             if(function_exists('the_custom_logo')) {
                 $custom_logo_id = get_theme_mod('custom_logo');
-                $logo = wp_get_attachment_image_src($custom_logo_id);
+                $logo = wp_get_attachment_image_src($custom_logo_id, $size = 'full');
             }
         ?>
-        <a href="index.html"><img src="<?php echo $logo[0] ?>" height="60px"></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo[0] ?>" height="60px"></a>
         <?php 
         wp_nav_menu(
             array(
@@ -43,7 +43,7 @@
     </div>
     <div class="nav-mobile" id="navMobile">
         <div class="mobile">
-            <a href="index.html"><img src="<?php echo $logo[0] ?>" height="60px"></a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo[0] ?>" height="60px"></a>
             <button class="close" id="close">
                 <?xml version="1.0" encoding="iso-8859-1"?>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

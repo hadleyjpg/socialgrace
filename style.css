@@ -2,16 +2,10 @@
 Theme Name: Social Grace
 Text Domain: Social Grace
 Version: 1.0
-Description: Custom Wordpress theme created for Social Grace Agency. Plugins used: Custom Adobe Fonts, Elementor, Elementor - Header, Footer & Blocks, MC4WP, Meta Box & Smash Balloon Instagram Feed. 
+Description: Custom Wordpress theme created for Social Grace Agency. Plugins used: Custom Adobe Fonts, Elementor, MC4WP, Meta Box & Smash Balloon Instagram Feed. 
 Author: Hadley Slucher
 Author URI: https://hadley.work
 */
-
-
-@font-face {
-    font-family: 'Moon Time Script';
-    src:  url('../fonts/MoonTime-Regular.ttf') format('truetype');
-  }
 
 :root {
     --accent: #EBDED4;
@@ -20,7 +14,6 @@ Author URI: https://hadley.work
     --fourth: #CBD0B5;
     --bg: #F7F2EB;
     --font: #C0987E;
-    --sub: 'Moon Time Script';
     --title: 'cora', sans-serif;
     --copy: 'muli', sans-serif;
 	--default-shadow: rgba(0, 0, 0, 0.25);
@@ -358,17 +351,17 @@ button.underline.dark a {
 }
 
 .work__single.thingstodolexky {
-    background: url('../images/projects/thingstodolex/thingstodolex-header.jpg') no-repeat center;
+    background: url('http://localhost:8888/socialgrace/wp-content/uploads/2021/04/thingstodolex-header-1.jpg') no-repeat center;
     background-size: cover;
 }
 
 .work__single.sirehotel {
-    background: url('../images/projects/sirehotel/sirehotel-header.jpg') no-repeat center;
+    background: url('http://localhost:8888/socialgrace/wp-content/uploads/2021/04/sirehotel-header.jpg') no-repeat center;
     background-size: cover;
 }
 
 .work__single.ninelives {
-    background: url('../images/projects/ninelives/ninelives-header.jpg') no-repeat center;
+    background: url('http://localhost:8888/socialgrace/wp-content/uploads/2021/04/ninelives-header.png') no-repeat center;
     background-size: cover;
 }
 
@@ -996,7 +989,6 @@ div#mc_embed_signup_scroll {
 .project {
     width: 65%;
     margin: 30px auto 200px;
-    background-image: url('../images/projects/thingstodolex/thingstodolex-header.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1060,7 +1052,7 @@ blockquote p {
 blockquote::before {
     display: flex;
     content: "";
-    background: url('../images/icons/quote.svg') no-repeat;
+    background: url('http://localhost:8888/socialgrace/wp-content/themes/socialgrace/assets/images/quote.svg') no-repeat;
     background-size: 45px;
     height: 45px;
     width: 45px;
